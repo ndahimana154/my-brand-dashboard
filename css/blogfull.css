@@ -1,0 +1,109 @@
+.article {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.article .article-section .img {
+  width: 100%;
+  height: 400px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.article .article-section .img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.article .article-section .author {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.article .article-section .author i {
+  color: #25ce1d;
+}
+.article .article-section .author span {
+  color: #25ce1d;
+}
+.article .article-section .time {
+  margin-bottom: 10px;
+}
+.article .article-section .time i {
+  color: #a5a5a5;
+}
+.article .article-section .time span {
+  color: #a5a5a5;
+}
+.article .article-section .overview {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.article-section .full {
+  font-weight: 200;
+}
+
+.recent-comments {
+  margin-top: 10px;
+}
+.recent-comments .comment-box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.6s ease-in-out;
+}
+.recent-comments .comment-box:hover {
+  background: #464646;
+}
+.recent-comments .comment-box .names {
+  font-weight: 500;
+}
+.recent-comments .comment-box .email {
+  color: #a5a5a5;
+}
+.recent-comments .comment-box .comment {
+  font-weight: 100;
+}
+
+.leave-comment form {
+  width: 100%;
+}
+.leave-comment form .placeholder {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.leave-comment form .placeholder input,
+.leave-comment form .placeholder textarea {
+  padding: 5px;
+  background: transparent;
+  border: 2px solid #a5a5a5;
+  color: #a5a5a5;
+  border-radius: 5px;
+  width: 100%;
+  outline: 0;
+}
+
+.leave-comment form .names {
+  display: flex;
+  flex-direction: row;
+}
+.leave-comment form .names .placeholder {
+  flex: 1;
+}
+.leave-comment form .names .holder1 {
+  margin-right: 15px;
+}
+.leave-comment form .names .holder2 {
+  margin-left: 15px;
+}
+.leave-comment form .sendBtn {
+  text-align: right;
+}
+.leave-comment form .sendBtn button {
+  background: #25ce1d;
+  padding: 5px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}

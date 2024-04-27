@@ -1,2 +1,1 @@
-# my brand dashboard
- 
+# My Brand

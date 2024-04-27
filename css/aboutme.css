@@ -1,0 +1,59 @@
+.aboutme {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  min-height: 100vh;
+}
+
+.aboutme .aboutme-section .short {
+  margin-top: 50px;
+}
+.aboutme .aboutme-section .short h3 {
+  font-size: 22px;
+}
+.aboutme .aboutme-section .short h3 span {
+  color: #25ce1d;
+  font-size: 22px;
+}
+.aboutme .aboutme-section .short p {
+  margin-top: 20px;
+}
+.aboutme .aboutme-section .short .resumebtn {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.aboutme .aboutme-section .short .resume {
+  background: #25ce1d;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+.aboutme .aboutme-section .skills  .skills-box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.aboutme .aboutme-section .skills  .skills-box .skill {
+    background: #25ce1d;
+    color: #fff;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+.aboutme .aboutme-section .journey {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.aboutme .aboutme-section .journey .one-j {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.aboutme .aboutme-section .journey .one-j span {
+    color: #25ce1d;
+    font-weight: bold;
+}
+.aboutme .aboutme-section .journey .one-j p {
+    margin-top: 10px;
+}

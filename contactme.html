@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fontawesome-free-6.5.1-web/css/all.css"
+    />
+    <link rel="stylesheet" href="./css/contactme.css" />
+    <title>Ndahimana Bonheur: About me</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-cont">
+          <div class="logo">
+            <a href="./index.html">
+              <img src="./images/Logo.png" alt="" />
+            </a>
+          </div>
+          <nav id="nav">
+            <ul>
+              <li>
+                <a href="./index.html"> Home </a>
+              </li>
+              <li>
+                <a href="./portfolio.html"> Portfolio </a>
+              </li>
+              <li>
+                <a href="./blog.html"> Blog </a>
+              </li>
+              <li>
+                <a href="./aboutme.html"> About me </a>
+              </li>
+              <li>
+                <a href="./contactme.html" class="active"> Contact me </a>
+              </li>
+              <li>
+                <a href="./signin.html" class="signIn"> Sign in </a>
+              </li>
+            </ul>
+            <div id="closemobile-menu">
+              <button id="close-menu-button">
+                <img src="./images/close.png" alt="" />
+              </button>
+            </div>
+          </nav>
+          <div class="mobile-menu">
+            <button id="menuTogglerBtn">
+              <img src="./images/mobile menu.png" alt="" />
+            </button>
+          </div>
+        </div>
+      </header>
+      <div class="contactme">
+        <div class="cont">
+          <div class="contactme-section">
+            <h2>Contact me</h2>
+            <p id="errorsSection">
+              For any problems, ideas, or even if you want to hire me, you can
+              go through the contact form. I respond within 2 hours maximum.
+            </p>
+            <div class="formerrormsg" id="formErrorMessage"></div>
+            <form action="" method="post" class="form" id="contactForm">
+              <div class="form-row">
+                <div class="left">
+                  <div class="placeholder">
+                    <label id="fnLabel"> Firstname </label>
+                    <input type="text" id="firstname" />
+                    <div class="error" id="firstnameError"></div>
+                  </div>
+                  <div class="placeholder">
+                    <label id="lnLabel"> Lastname </label>
+                    <input type="text" id="lastname" />
+                    <div class="error" id="lastnameError"></div>
+                  </div>
+                  <div class="placeholder">
+                    <label id="emLabel"> Email </label>
+                    <input type="email" id="email" />
+                    <div class="error" id="emailError"></div>
+                  </div>
+                </div>
+                <div class="right">
+                  <div class="placeholder">
+                    <label id="msgLabel"> Message </label>
+                    <textarea
+                      name=""
+                      id="message"
+                      cols="30"
+                      rows="9"
+                    ></textarea>
+                    <div class="error" id="messageError"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="sendBtn">
+                <button onclick="validateContactForm(event)" type="submit">
+                  <i class="fa fa-paper-plane"></i>
+                  Send 
+                </button>
+              </div>
+            </form>
+            <div class="socials">
+              <ul>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/ndahimana154"
+                    target="_blank"
+                  >
+                    <img src="./images/linkedin.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/154blogs" target="_blank">
+                    <img src="./images/instagram.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.x.com/154blogs" target="_blank">
+                    <img src="./images/twitter.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@154blogs" target="_blank">
+                    <img src="./images/youtube.png" alt="" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <div class="copy">&copy; 2024 Allrights reserved</div>
+      </footer>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="./js/menu-toggler.js"></script>
+    <script src="./js/contactme.js"></script>
+  </body>
+</html>
