@@ -21,7 +21,8 @@
           </a>
         </div>
         <div class="btn" title="Logout">
-          <button>
+          <div id="actingProfile"></div>
+          <button id="logoutButton">
             <i class="fa fa-sign-out"></i>
           </button>
         </div>
@@ -58,25 +59,35 @@
         <div class="right">
           <div class="new-section">
             <h1>New blog</h1>
-            <form action="" class="new-form">
+            <form
+              action=""
+              id="new-blog-form"
+              class="new-form"
+              enctype="multipart/form-data"
+            >
               <p>
                 <label> Blog title </label>
-                <input type="text" required />
+                <input type="text" name="title" required />
               </p>
               <p>
                 <label> Blog summary </label>
-                <input type="text" required />
+                <input type="text" name="summary" required />
               </p>
               <p>
                 <label> Blog full text </label>
-                <textarea name="" id="" cols="30" rows="10" required></textarea>
+                <textarea
+                  name="article"
+                  cols="30"
+                  rows="10"
+                  required
+                ></textarea>
               </p>
               <p>
                 <label> Blog cover image </label>
-                <input type="file" required />
+                <input type="file" name="cover" required />
               </p>
               <p>
-                <button class="">
+                <button type="submit">
                   <i class="fa fa-post"></i>
                   Post
                 </button>
@@ -86,6 +97,6 @@
         </div>
       </div>
     </div>
-    <script src="./js/menu-toggler.js"></script>
+    <script src="./js/post-blog.js"></script>
   </body>
 </html>
