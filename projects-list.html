@@ -29,44 +29,44 @@
       </div>
       <div class="dash-board">
         <div class="left">
-            <ul>
-                <li>
-                  <a href="./admin-home.html">
-                    <i class="fa fa-house"></i>
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="./admin-new-blog.html">
-                    <i class="fa fa-plus-circle"></i>
-                    New blog
-                  </a>
-                </li>
-                <li>
-                  <a href="./admin-blog-list.html">
-                    <i class="fa fa-list"></i>
-                    Blog List
-                  </a>
-                </li>
-                <li>
-                  <a href="./messages.html">
-                    <i class="fa fa-mail-bulk"></i>
-                    Messages
-                  </a>
-                </li>
-                <li>
-                  <a href="./new-project.html">
-                    <i class="fa fa-plus-circle"></i>
-                    New Project 
-                  </a>
-                </li>
-                <li>
-                  <a href="./projects-list.html">
-                    <i class="fa fa-list"></i>
-                    Projects List 
-                  </a>
-                </li>
-              </ul>
+          <ul>
+            <li>
+              <a href="./admin-home.html">
+                <i class="fa fa-house"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="./admin-new-blog.html">
+                <i class="fa fa-plus-circle"></i>
+                New blog
+              </a>
+            </li>
+            <li>
+              <a href="./admin-blog-list.html">
+                <i class="fa fa-list"></i>
+                Blog List
+              </a>
+            </li>
+            <li>
+              <a href="./messages.html">
+                <i class="fa fa-mail-bulk"></i>
+                Messages
+              </a>
+            </li>
+            <li>
+              <a href="./new-project.html">
+                <i class="fa fa-plus-circle"></i>
+                New Project
+              </a>
+            </li>
+            <li>
+              <a href="./projects-list.html">
+                <i class="fa fa-list"></i>
+                Projects List
+              </a>
+            </li>
+          </ul>
         </div>
         <div class="right">
           <div class="list-section">
@@ -84,12 +84,33 @@
               <tbody id="projectsTableBody">
                 <!-- Table rows will be dynamically added here -->
               </tbody>
-              
             </table>
           </div>
         </div>
       </div>
     </div>
     <script src="./js/projects-list.js"></script>
+    <script>
+      // Access token
+      const accessToken = sessionStorage.getItem("accessToken");
+
+      // Username
+      const username = sessionStorage.getItem("username");
+
+      // Logout
+
+      const logoutButton = document.getElementById("logoutButton");
+      logoutButton.addEventListener("click", function () {
+        sessionStorage.removeItem("accessToken");
+        sessionStorage.removeItem("username");
+
+        window.location.href = "./signin.html";
+      });
+
+      // Check if access token exists
+      if (!accessToken || !username) {
+        window.location.href = "./signin.html";
+      }
+    </script>
   </body>
 </html>

@@ -99,5 +99,27 @@
       </div>
     </div>
     <script src="./js/menu-toggler.js"></script>
+    <script>
+      // Access token
+      const accessToken = sessionStorage.getItem("accessToken");
+
+      // Username
+      const username = sessionStorage.getItem("username");
+
+      // Logout
+
+      const logoutButton = document.getElementById("logoutButton");
+      logoutButton.addEventListener("click", function () {
+        sessionStorage.removeItem("accessToken");
+        sessionStorage.removeItem("username");
+
+        window.location.href = "./signin.html";
+      });
+
+      // Check if access token exists
+      if (!accessToken || !username) {
+        window.location.href = "./signin.html";
+      }
+    </script>
   </body>
 </html>

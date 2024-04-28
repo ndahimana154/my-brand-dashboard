@@ -57,13 +57,13 @@
             <li>
               <a href="./new-project.html">
                 <i class="fa fa-plus-circle"></i>
-                New Project 
+                New Project
               </a>
             </li>
             <li>
               <a href="./projects-list.html">
                 <i class="fa fa-list"></i>
-                Projects List 
+                Projects List
               </a>
             </li>
           </ul>
@@ -71,14 +71,34 @@
         <div class="right">
           <div class="list-section">
             <h1>Blog list</h1>
-            <div class="lists-row" id="blogRow">
-      
-            </div>
+            <div class="lists-row" id="blogRow"></div>
           </div>
         </div>
       </div>
     </div>
     <script src="./js/admin.js"></script>
     <script src="./js/admin-home.js"></script>
+    <script>
+      // Access token
+      const accessToken = sessionStorage.getItem("accessToken");
+
+      // Username
+      const username = sessionStorage.getItem("username");
+
+      // Logout
+
+      const logoutButton = document.getElementById("logoutButton");
+      logoutButton.addEventListener("click", function () {
+        sessionStorage.removeItem("accessToken");
+        sessionStorage.removeItem("username");
+
+        window.location.href = "./signin.html";
+      });
+
+      // Check if access token exists
+      if (!accessToken || !username) {
+        window.location.href = "./signin.html";
+      }
+    </script>
   </body>
 </html>
