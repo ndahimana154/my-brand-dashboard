@@ -5,6 +5,12 @@ h1 {
   font-size: 25px;
   color: #25ce1d;
 }
+button {
+  background: transparent;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px;
+}
 .admin-header {
   display: flex;
   flex-direction: row;
@@ -159,7 +165,7 @@ h1 {
 .lists-row .list-box a {
   margin-right: 5px;
 }
-.lists-row .list-box .delete {
+.delete {
   background: #d10d0d;
 }
 

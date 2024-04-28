@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const getBlogs = async () => {
     try {
       // Send GET request to fetch blogs data
-      const response = await fetch("https://my-brand-backend-5cne.onrender.com/api/blog");
+      const response = await fetch(
+        "https://my-brand-backend-5cne.onrender.com/api/blog"
+      );
 
       // Check if the request was successful
       if (!response.ok) {
@@ -47,6 +49,20 @@ document.addEventListener("DOMContentLoaded", function () {
         blogRow.innerHTML = "No blogs found.";
       } else {
         blogs.forEach((blog) => {
+          // Convert date string to Date object
+          const blogDate = new Date(blog.postedAt);
+
+          // Format date string (e.g., "April 22, 2024, 20:08:32")
+          const formattedPostedAt = blogDate.toLocaleString("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+            hour: "numeric",
+            minute: "numeric",
+            second: "numeric",
+            hour12: true,
+          });
+
           const blogBox = document.createElement("div");
           blogBox.classList.add("list-box");
 
@@ -59,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
           blogBox.innerHTML += `
                   <h3>${blog.title}</h3>
                   <p>${blog.summary}</p>
-                  <span>${blog.postedAt}</span>
+                  <span>${formattedPostedAt}</span>
                   <div class="ctrz">
                       <a target="_blank"
                        href="https://ndahimana154.github.io/my-brand/blogfull.html?id=${blog._id}">

@@ -74,7 +74,7 @@ function validateContactForm(event) {
       message: message,
     };
 
-    fetch("http://localhost:3301/api/message", {
+    fetch("https://my-brand-backend-5cne.onrender.com/api/message", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
