@@ -47,12 +47,13 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  height: calc(100vh-140px);
 }
 .dash-board .left {
   width: 300px;
   padding: 10px;
   background: #000;
-  height: 100vh;
+  height: calc(100vh-140px);
 }
 .dash-board .left ul {
   display: flex;
@@ -67,7 +68,8 @@ button {
 }
 .dash-board .right {
   padding: 10px;
-  height: 100vh;
+  height: calc(100vh-140px);
+  width: 100%;
   overflow: auto;
 }
 .dash-board .right .boards-row {
