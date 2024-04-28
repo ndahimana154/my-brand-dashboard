@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       // Send GET request to fetch blogs data
       const response = await fetch(
-        "https://my-brand-backend-5cne.onrender.com/api/blog"
+        "https://my-brand-backend-server.onrender.com/api/blog"
       );
 
       // Check if the request was successful
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       try {
         const response = await fetch(
-          `https://my-brand-backend-5cne.onrender.com/api/blog/${blogId}`,
+          `https://my-brand-backend-server.onrender.com/api/blog/${blogId}`,
           {
             method: "DELETE",
           }

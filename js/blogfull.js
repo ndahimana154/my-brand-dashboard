@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     // If the blog ID is present in the URL
     if (blogId) {
       // Fetch the specific blog content using the ID
-      const response = await fetch(`https://my-brand-backend-5cne.onrender.com/api/blog/${blogId}`);
+      const response = await fetch(`https://my-brand-backend-server.onrender.com/api/blog/${blogId}`);
       const data = await response.json();
 
       // Log the data object to the console for debugging

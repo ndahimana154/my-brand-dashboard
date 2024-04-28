@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const fetchMessages = async () => {
     try {
-      const response = await fetch("https://my-brand-backend-5cne.onrender.com/api/message");
+      const response = await fetch("https://my-brand-backend-server.onrender.com/api/message");
       const data = await response.json();
       console.log(data);
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const messageId = event.target.value;
           try {
             const response = await fetch(
-              `https://my-brand-backend-5cne.onrender.com/api/message/${messageId}`,
+              `https://my-brand-backend-server.onrender.com/api/message/${messageId}`,
               {
                 method: "DELETE",
               }

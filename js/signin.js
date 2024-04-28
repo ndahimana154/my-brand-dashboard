@@ -25,7 +25,7 @@ document
     // If no validation errors, proceed with login
     if (!usernameError.textContent && !passwordError.textContent) {
       try {
-        const response = await fetch("https://my-brand-backend-5cne.onrender.com/api/user/login", {
+        const response = await fetch("https://my-brand-backend-server.onrender.com/api/user/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

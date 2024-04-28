@@ -1,7 +1,7 @@
 const getTotalBlogs = async () => {
   try {
     const response = await fetch(
-      "https://my-brand-backend-5cne.onrender.com/api/blog/"
+      "https://my-brand-backend-server.onrender.com/api/blog/"
     );
     const data = await response.json();
 
