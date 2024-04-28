@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/admin.css" />
-    <title>Ndahimana Bonheur: Dashboard</title>
+    <title>Ndahimana Bonheur: Messages</title>
   </head>
   <body>
     <div class="container">
@@ -54,35 +54,30 @@
                 Messages
               </a>
             </li>
-            <li>
-              <a href="./new-project.html">
-                <i class="fa fa-plus-circle"></i>
-                New Project 
-              </a>
-            </li>
-            <li>
-              <a href="./projects-list.html">
-                <i class="fa fa-list"></i>
-                Projects List 
-              </a>
-            </li>
           </ul>
         </div>
         <div class="right">
-          <div class="boards-row">
-            <div class="board">
-              <div class="b-left">
-                <img src="./images/blog.png" alt="" />
-              </div>
-              <div class="b-right">
-                <span>Total Blogs</span>
-                <p id="blogsTotal"></p>
-              </div>
-            </div>
+          <div class="list-section">
+            <h1>Projects list</h1>
+            <table class="table">
+              <thead>
+                <tr>
+                  <td>#</td>
+                  <td>Project name</td>
+                  <td>Description</td>
+                  <td>Image</td>
+                  <td>Actions</td>
+                </tr>
+              </thead>
+              <tbody id="projectsTableBody">
+                <!-- Table rows will be dynamically added here -->
+              </tbody>
+              
+            </table>
           </div>
         </div>
       </div>
     </div>
-    <script src="./js/admin-home.js"></script>
+    <script src="./js/projects-list.js"></script>
   </body>
 </html>

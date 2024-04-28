@@ -185,3 +185,6 @@ button {
 .table tbody tr td {
   padding: 10px;
 }
+.table img {
+  width: 80px;
+}

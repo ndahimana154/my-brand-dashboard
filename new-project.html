@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/admin.css" />
-    <title>Ndahimana Bonheur: Dashboard</title>
+    <title>Ndahimana Bonheur: New Project</title>
   </head>
   <body>
     <div class="container">
@@ -54,35 +54,57 @@
                 Messages
               </a>
             </li>
-            <li>
-              <a href="./new-project.html">
-                <i class="fa fa-plus-circle"></i>
-                New Project 
-              </a>
-            </li>
-            <li>
-              <a href="./projects-list.html">
-                <i class="fa fa-list"></i>
-                Projects List 
-              </a>
-            </li>
           </ul>
         </div>
         <div class="right">
-          <div class="boards-row">
-            <div class="board">
-              <div class="b-left">
-                <img src="./images/blog.png" alt="" />
-              </div>
-              <div class="b-right">
-                <span>Total Blogs</span>
-                <p id="blogsTotal"></p>
-              </div>
-            </div>
+          <div class="new-section">
+            <h1>New blog</h1>
+            <form
+              action=""
+              id="new-project-form"
+              class="new-form"
+              enctype="multipart/form-data"
+            >
+              <p>
+                <label> Project title </label>
+                <input type="text" name="title" required />
+              </p>
+              <p>
+                <label> Project description </label>
+                <textarea
+                  name="description"
+                  cols="30"
+                  rows="10"
+                  required
+                ></textarea>
+              </p>
+              <p>
+                <label>Project Cover image </label>
+                <input type="file" name="file" required />
+              </p>
+              <p>
+                <label>Project Start date </label>
+                <input type="date" name="startTime" required />
+              </p>
+              <p>
+                <label>Project end date </label>
+                <input type="date" name="endTime" required />
+              </p>
+              <p>
+                <label>Project External link </label>
+                <input type="text" name="externalLink" required />
+              </p>
+              <p>
+                <button type="submit">
+                  <i class="fa fa-post"></i>
+                  Post
+                </button>
+              </p>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    <script src="./js/admin-home.js"></script>
+    <script src="./js/new-project.js"></script>
   </body>
 </html>
