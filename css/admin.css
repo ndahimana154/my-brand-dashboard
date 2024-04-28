@@ -148,17 +148,20 @@ h1 {
 .lists-row .list-box span i {
   color: #25ce1d;
 }
-.lists-row .list-box button {
+.lists-row .list-box button,
+.lists-row .list-box a {
   background: #474747;
   border: 0;
   padding: 5px;
   border-radius: 5px;
   margin-top: 5px;
 }
+.lists-row .list-box a {
+  margin-right: 5px;
+}
 .lists-row .list-box .delete {
   background: #d10d0d;
 }
-
 
 .table {
   width: 100%;
@@ -167,7 +170,7 @@ h1 {
 .table thead {
   /* width: 100%; */
 }
-.table thead  tr td{
+.table thead tr td {
   color: #fff;
   padding: 10px;
   border-left: 1px solid #474747;

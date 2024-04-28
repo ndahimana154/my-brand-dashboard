@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const formData = new FormData(newBlogForm);
 
       // Send POST request to backend
-      const response = await fetch("http://localhost:3301/api/blog/", {
+      const response = await fetch("https://my-brand-backend-5cne.onrender.com//api/blog/", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`,

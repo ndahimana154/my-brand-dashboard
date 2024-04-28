@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Create an img element with the src attribute set to the blog's cover image URL
           const img = document.createElement("img");
-          img.src = "/uploads/blogs/"+blog.cover;
+          img.src = blog.cover;
           blogBox.appendChild(img);
 
           // Add other blog details
@@ -61,10 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
                   <p>${blog.summary}</p>
                   <span>${blog.postedAt}</span>
                   <div class="ctrz">
-                      <button>
+                      <a target="_blank"
+                       href="https://ndahimana154.github.io/my-brand/blogfull.html?id=${blog._id}">
                           <i class="fa fa-arrow-right"></i>
                           Read more
-                      </button>
+                      </a>
                       <button onclick="window.location.href='admin-edit-blog.html'">
                           <i class="fa fa-edit"></i>
                           Edit
@@ -93,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       try {
         const response = await fetch(
-          `http://localhost:3301/api/blog/${blogId}`,
+          `https://my-brand-backend-5cne.onrender.com/api/blog/${blogId}`,
           {
             method: "DELETE",
           }
