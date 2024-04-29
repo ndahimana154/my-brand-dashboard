@@ -21,7 +21,8 @@
           </a>
         </div>
         <div class="btn" title="Logout">
-          <button>
+          <div id="actingProfile"></div>
+          <button id="logoutButton">
             <i class="fa fa-sign-out"></i>
           </button>
         </div>
@@ -56,13 +57,13 @@
             <li>
               <a href="./new-project.html">
                 <i class="fa fa-plus-circle"></i>
-                New Project 
+                New Project
               </a>
             </li>
             <li>
               <a href="./projects-list.html">
                 <i class="fa fa-list"></i>
-                Projects List 
+                Projects List
               </a>
             </li>
           </ul>
@@ -98,7 +99,7 @@
         </div>
       </div>
     </div>
-    <script src="./js/menu-toggler.js"></script>
+    <script src="./js/edit-blog.js"></script>
     <script>
       // Access token
       const accessToken = sessionStorage.getItem("accessToken");
@@ -106,6 +107,8 @@
       // Username
       const username = sessionStorage.getItem("username");
 
+      // Replace axting profile
+      document.getElementById("actingProfile").textContent = username;
       // Logout
 
       const logoutButton = document.getElementById("logoutButton");

@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           <i class="fa fa-arrow-right"></i>
                           Read more
                       </a>
-                      <button onclick="window.location.href='admin-edit-blog.html'">
+                      <button onclick="window.location.href='admin-edit-blog.html?id=${blog._id}'">
                           <i class="fa fa-edit"></i>
                           Edit
                       </button>

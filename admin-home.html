@@ -57,19 +57,37 @@
             <li>
               <a href="./new-project.html">
                 <i class="fa fa-plus-circle"></i>
-                New Project 
+                New Project
               </a>
             </li>
             <li>
               <a href="./projects-list.html">
                 <i class="fa fa-list"></i>
-                Projects List 
+                Projects List
               </a>
             </li>
           </ul>
         </div>
         <div class="right">
           <div class="boards-row">
+            <div class="board">
+              <div class="b-left">
+                <img src="./images/clipboard.png" alt="" />
+              </div>
+              <div class="b-right">
+                <span>Total Projects</span>
+                <p id="blogsTotal"></p>
+              </div>
+            </div>
+            <div class="board">
+              <div class="b-left">
+                <img src="./images/message.png" alt="" />
+              </div>
+              <div class="b-right">
+                <span>Total Messages</span>
+                <p id="blogsTotal"></p>
+              </div>
+            </div>
             <div class="board">
               <div class="b-left">
                 <img src="./images/blog.png" alt="" />
@@ -91,6 +109,8 @@
       // Username
       const username = sessionStorage.getItem("username");
 
+      // Replace axting profile
+      document.getElementById("actingProfile").textContent = username;
       // Logout
 
       const logoutButton = document.getElementById("logoutButton");

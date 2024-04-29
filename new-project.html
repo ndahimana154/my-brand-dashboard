@@ -70,7 +70,7 @@
         </div>
         <div class="right">
           <div class="new-section">
-            <h1>New blog</h1>
+            <h1>New Project</h1>
             <form
               action=""
               id="new-project-form"
@@ -125,6 +125,8 @@
       // Username
       const username = sessionStorage.getItem("username");
 
+      // Replace axting profile
+      document.getElementById("actingProfile").textContent = username;
       // Logout
 
       const logoutButton = document.getElementById("logoutButton");
