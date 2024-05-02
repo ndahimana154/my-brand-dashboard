@@ -1,9 +1,14 @@
 // Select the tbody element where the project rows will be added
 const projectsTableBody = document.getElementById("projectsTableBody");
+// Select the loading div
+const loadingDiv = document.querySelector(".center");
 
 // Function to fetch projects from the server and populate the table
 async function fetchProjects() {
   try {
+    // Show loading rings initially
+    loadingDiv.style.display = "flex";
+
     // Make a GET request to the endpoint
     const response = await fetch("https://my-brand-backend-server.onrender.com/api/project");
 
@@ -37,6 +42,9 @@ async function fetchProjects() {
   } catch (error) {
     console.error("Error:", error);
     alert("An error occurred while fetching projects");
+  } finally {
+    // Hide loading rings after the project list is fetched and displayed, or if an error occurs
+    loadingDiv.style.display = "none";
   }
 }
 

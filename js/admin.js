@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Get all Blogs
   const getBlogs = async () => {
+    const loadingRing = document.querySelector(".center"); // Select the first element with class 'center'
+    loadingRing.style.display = "block"; // Show loading indicator
+
     try {
       // Send GET request to fetch blogs data
       const response = await fetch(
@@ -73,40 +76,43 @@ document.addEventListener("DOMContentLoaded", function () {
 
           // Add other blog details
           blogBox.innerHTML += `
-                  <h3>${blog.title}</h3>
-                  <p>${blog.summary}</p>
-                  <span>${formattedPostedAt}</span>
-                  <div class="ctrz">
-                      <a target="_blank"
-                       href="https://ndahimana154.github.io/my-brand/blogfull.html?id=${blog._id}">
-                          <i class="fa fa-arrow-right"></i>
-                          Read more
-                      </a>
-                      <button onclick="window.location.href='admin-edit-blog.html?id=${blog._id}'">
-                          <i class="fa fa-edit"></i>
-                          Edit
-                      </button>
-                      <button class="delete" value="${blog._id}" onclick="">
-                          <i class="fa fa-trash"></i>
-                          Delete
-                      </button>
-                  </div>
-              `;
+                        <h3>${blog.title}</h3>
+                        <p>${blog.summary}</p>
+                        <span>${formattedPostedAt}</span>
+                        <div class="ctrz">
+                            <a target="_blank"
+                            href="https://ndahimana154.github.io/my-brand/blogfull.html?id=${blog._id}">
+                                <i class="fa fa-arrow-right"></i>
+                                Read more
+                            </a>
+                            <button onclick="window.location.href='admin-edit-blog.html?id=${blog._id}'">
+                                <i class="fa fa-edit"></i>
+                                Edit
+                            </button>
+                            <button class="delete" value="${blog._id}" onclick="">
+                                <i class="fa fa-trash"></i>
+                                Delete
+                            </button>
+                        </div>
+                    `;
           blogRow.appendChild(blogBox);
         });
       }
     } catch (error) {
       console.error("Error fetching blogs:", error.message);
+    } finally {
+      loadingRing.style.display = "none"; // Hide loading indicator
     }
   };
 
   // Call the getBlogs function to fetch and display the blogs
   getBlogs();
 
-  // Delete Blog Operations
   document.addEventListener("click", async (e) => {
     if (e.target.classList.contains("delete")) {
       const blogId = e.target.value;
+      const loadingRing = document.querySelector(".center"); // Select the first element with class 'center'
+      loadingRing.style.display = "block"; // Show loading indicator
 
       try {
         const response = await fetch(
@@ -125,6 +131,8 @@ document.addEventListener("DOMContentLoaded", function () {
         getBlogs();
       } catch (error) {
         console.error("Error deleting blog:", error.message);
+      } finally {
+        loadingRing.style.display = "none"; // Hide loading indicator
       }
     }
   });

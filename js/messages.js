@@ -1,9 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
   const fetchMessages = async () => {
+    const loadingRing = document.querySelector(".center"); // Select the first element with class 'center'
+    loadingRing.style.display = "block"; // Show loading indicator
+
     try {
-      const response = await fetch("https://my-brand-backend-server.onrender.com/api/message");
+      const response = await fetch(
+        "https://my-brand-backend-server.onrender.com/api/message"
+      );
       const data = await response.json();
-      console.log(data);
 
       const messageTableBody = document.getElementById("messageTableBody");
       // Clear existing table rows
@@ -26,20 +30,22 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         const row = `
-            <tr>
-              <td>${index + 1}</td>
-              <td>${formattedSentAt}</td>
-              <td>${message.firstname}</td>
-              <td>${message.lastname}</td>
-              <td>${message.email}</td>
-              <td>${message.message}</td>
-              <td>
-                <button value="${message._id}" class="delete delete-message">
-                  <i class="fa fa-trash"></i> Delete
-                </button>
-              </td>
-            </tr>
-          `;
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${formattedSentAt}</td>
+                        <td>${message.firstname}</td>
+                        <td>${message.lastname}</td>
+                        <td>${message.email}</td>
+                        <td>${message.message}</td>
+                        <td>
+                            <button value="${
+                              message._id
+                            }" class="delete delete-message">
+                                <i class="fa fa-trash"></i> Delete
+                            </button>
+                        </td>
+                    </tr>
+                `;
         // Append the row to the table body
         messageTableBody.insertAdjacentHTML("beforeend", row);
       });
@@ -49,6 +55,9 @@ document.addEventListener("DOMContentLoaded", function () {
       deleteButtons.forEach((button) => {
         button.addEventListener("click", async (event) => {
           const messageId = event.target.value;
+          const loadingRing = document.querySelector(".center"); // Select the first element with class 'center'
+          loadingRing.style.display = "block"; // Show loading indicator
+
           try {
             const response = await fetch(
               `https://my-brand-backend-server.onrender.com/api/message/${messageId}`,
@@ -60,17 +69,20 @@ document.addEventListener("DOMContentLoaded", function () {
               // Remove the corresponding table row if the message is deleted successfully
               event.target.closest("tr").remove();
               alert("Message deleted successfully");
-              fetchMessages();
             } else {
               alert("Failed to delete message");
             }
           } catch (error) {
             console.error("Error deleting message:", error.message);
+          } finally {
+            loadingRing.style.display = "none"; // Hide loading indicator
           }
         });
       });
     } catch (error) {
       console.error("Error fetching messages:", error.message);
+    } finally {
+      loadingRing.style.display = "none"; // Hide loading indicator
     }
   };
 
