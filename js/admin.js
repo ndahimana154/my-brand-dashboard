@@ -89,6 +89,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                 <i class="fa fa-edit"></i>
                                 Edit
                             </button>
+                            <button onclick="window.location.href='admin-blog-comments.html?id=${blog._id}'">
+                                <i class="fa fa-eye"></i>
+                                Comments
+                            </button>
                             <button class="delete" value="${blog._id}" onclick="">
                                 <i class="fa fa-trash"></i>
                                 Delete

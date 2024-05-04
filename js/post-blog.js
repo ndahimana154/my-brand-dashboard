@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const response = await fetch("https://my-brand-backend-server.onrender.com/api/blog/", {
               method: "POST",
               headers: {
-                  Authorization: `Bearer ${accessToken}`,
+                  Authorization: `${accessToken}`,
               },
               body: formData, // Pass the FormData object directly as the body
           });
