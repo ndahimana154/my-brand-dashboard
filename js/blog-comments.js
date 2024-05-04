@@ -45,6 +45,15 @@ const fetchBlogCommentsAndPopulateTable = async () => {
       blogCommentsTable.innerHTML = row;
     } else {
       comments.blogComments.forEach((comment, index) => {
+        let buttonAA = "";
+        if (comment.status == "Unreviewed") {
+          buttonAA = `
+          <button class="review" value='${comment._id}'>
+          <i class="fa fa-check"></i>
+          Review
+          </button>
+          `;
+        }
         const row = `
                 <tr>
                     <td>${index + 1}</td>
@@ -54,9 +63,7 @@ const fetchBlogCommentsAndPopulateTable = async () => {
                     <td>${comment.commentedAt}</td>
                     <td>${comment.status}</td>
                     <td>
-                        <button>
-                        <i class="fa fa-check"></i>
-                        </button>
+                       ${buttonAA}
                         <!-- Add actions buttons here if needed -->
                     </td>
                 </tr>
@@ -66,6 +73,42 @@ const fetchBlogCommentsAndPopulateTable = async () => {
       });
     }
 
+    document.addEventListener("click", async (e) => {
+      if (e.target.classList.contains("review")) {
+        try {
+          const commentId = e.target.value;
+          showLoadingRing();
+
+          // Send POST request to review the comment
+          const response = await fetch(
+            `http://localhost:3301/api/comment/review/${commentId}`,
+            {
+              method: "PUT",
+            }
+          );
+
+          // Check if the request was successful
+          if (response.ok) {
+            // If successful, fetch and populate blog comments table again
+            await fetchBlogCommentsAndPopulateTable();
+            alert("Comment reviewed successfully!");
+          } else {
+            // If not successful, display error message
+            alert("Failed to review comment. Please try again later.");
+          }
+
+          // Hide loading ring after request is completed
+          hideLoadingRing();
+        } catch (error) {
+          console.error("Error:", error);
+          // Hide loading ring if an error occurs
+          hideLoadingRing();
+          alert(
+            "An error occurred while reviewing the comment. Please try again later."
+          );
+        }
+      }
+    });
     // Hide loading ring after data is fetched and table is populated
     hideLoadingRing();
   } catch (error) {
