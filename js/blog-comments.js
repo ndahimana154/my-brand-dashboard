@@ -76,12 +76,13 @@ const fetchBlogCommentsAndPopulateTable = async () => {
     document.addEventListener("click", async (e) => {
       if (e.target.classList.contains("review")) {
         try {
+          showLoadingRing();
           const commentId = e.target.value;
           showLoadingRing();
 
           // Send POST request to review the comment
           const response = await fetch(
-            `http://localhost:3301/api/comment/review/${commentId}`,
+            `https://my-brand-backend-server.onrender.com/api/comment/review/${commentId}`,
             {
               method: "PUT",
             }

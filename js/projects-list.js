@@ -1,3 +1,15 @@
+// Function to show loading ring
+const showLoadingRing = () => {
+  const loadingDiv = document.querySelector(".center");
+  loadingDiv.style.display = "flex";
+};
+
+// Function to hide loading ring
+const hideLoadingRing = () => {
+  const loadingDiv = document.querySelector(".center");
+  loadingDiv.style.display = "none";
+};
+
 // Select the tbody element where the project rows will be added
 const projectsTableBody = document.getElementById("projectsTableBody");
 // Select the loading div
@@ -10,7 +22,9 @@ async function fetchProjects() {
     loadingDiv.style.display = "flex";
 
     // Make a GET request to the endpoint
-    const response = await fetch("https://my-brand-backend-server.onrender.com/api/project");
+    const response = await fetch(
+      "https://my-brand-backend-server.onrender.com/api/project"
+    );
 
     // Check if response is successful
     if (response.ok) {
@@ -27,8 +41,10 @@ async function fetchProjects() {
             <td>${project.description}</td>
             <td><img src="${project.image}" alt="Project Image"></td>
             <td>
-              <button onclick="editProject(${project.id})">Edit</button>
-              <button onclick="deleteProject(${project.id})">Delete</button>
+              <button onclick="">Edit</button>
+              <button class="delete-project" value="${
+                project._id
+              }">Delete</button>
             </td>
           </tr>
         `;
@@ -37,7 +53,9 @@ async function fetchProjects() {
       });
     } else {
       // Handle non-successful response
-      throw new Error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
+      throw new Error(
+        `Failed to fetch projects: ${response.status} ${response.statusText}`
+      );
     }
   } catch (error) {
     console.error("Error:", error);
@@ -47,28 +65,40 @@ async function fetchProjects() {
     loadingDiv.style.display = "none";
   }
 }
+document.addEventListener("click", async (e) => {
+  if (e.target.classList.contains("delete-project")) {
+    showLoadingRing();
+    const projectId = e.target.value;
+    showLoadingRing();
 
-// Function to delete a project
-async function deleteProject(projectId) {
-  try {
-    const response = await fetch(`https://my-brand-backend-server.onrender.com/api/project/${projectId}`, {
-      method: "DELETE",
-    });
-
-    // Check if response is successful
+    // Send DELETE request to delete the project
+    const response = await fetch(
+      `https://my-brand-backend-server.onrender.com/api/project/${projectId}`,
+      {
+        method: "DELETE",
+      }
+    );
+    
+    // Check if the request was successful
     if (response.ok) {
-      // Refresh the projects list after deletion
-      fetchProjects();
-      alert("Project deleted successfully");
+      // If successful, fetch and populate blog comments table again
+      await fetchProjects();
+      alert("Project deleted successfully!");
     } else {
-      // Handle non-successful response
-      throw new Error(`Failed to delete project: ${response.status} ${response.statusText}`);
+      // If not successful, display error message
+      alert("Failed to delete project. Please try again later.");
     }
-  } catch (error) {
-    console.error("Error:", error);
-    alert("An error occurred while deleting the project");
+
+    // Hide loading ring after request is completed
+    hideLoadingRing().catch(error => {
+      console.error("Error:", error);
+      // Hide loading ring if an error occurs
+      hideLoadingRing();
+      alert("An error occurred while deleting project. Please try again later.");
+    });
   }
-}
+});
+
 
 // Call the fetchProjects function when the page loads
 window.addEventListener("load", fetchProjects);
