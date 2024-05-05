@@ -84,7 +84,7 @@ const fetchBlogCommentsAndPopulateTable = async () => {
           const response = await fetch(
             `https://my-brand-backend-server.onrender.com/api/comment/review/${commentId}`,
             {
-              method: "PUT",
+              method: "PATCH",
             }
           );
 

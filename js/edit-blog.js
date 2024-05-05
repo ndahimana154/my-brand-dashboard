@@ -42,7 +42,7 @@ const handleFormSubmit = async (event) => {
       const response = await fetch(
           `https://my-brand-backend-server.onrender.com/api/blog/${id}`,
           {
-              method: "PUT",
+              method: "PATCH",
               headers: {
                   "Content-Type": "application/json",
               },
