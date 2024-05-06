@@ -40,7 +40,7 @@ const handleFormSubmit = async (event) => {
       };
 
       const response = await fetch(
-          `https://my-brand-backend-server.onrender.com/api/blog/${id}`,
+          `http://localhost:3301/api/blog/${id}`,
           {
               method: "PATCH",
               headers: {
